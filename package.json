@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "css.gg": "^2.0.0"
   }
 }
