@@ -13,10 +13,49 @@
         <p id="date2"></p>
         <p id="date3"></p>
         <p id="item-list"></p>
-        <div class="big-box">
+        <!-- <div class="big-box">
           <button class="gg-add"></button>
-        </div>
+        </div> -->
         <!-- <span id="date2"></span> -->
+
+        <button id="myBtn" class="gg-add"></button>
+
+        <!-- <button id="update-to-do" class="gg-add"></button> -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- <p>Some text in the Modal..</p> -->
+            <form class="todo-form js-form">
+              <input
+                autofocus
+                type="text"
+                aria-label="Enter a new todo item"
+                placeholder="Weet jou ma jy is hier?"
+                class="js-todo-input"
+              />
+            </form>
+          </div>
+        </div>
+        <!-- modal 2 for edit popup -->
+        <div id="myModal2" class="modal">
+          <!-- Modal content 2-->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- <p>Some text in the Modal..</p> -->
+            <form class="update-form">
+              <input
+                autofocus
+                type="text"
+                aria-label="Enter a new todo item"
+                placeholder=""
+                class="js-todo-input2"
+              />
+            </form>
+          </div>
+        </div>
 
         <ul class="todo-list js-todo-list"></ul>
         <!-- add the empty state here -->
@@ -27,15 +66,6 @@
           </p>
         </div> -->
         <!-- end -->
-        <form class="todo-form js-form">
-          <input
-            autofocus
-            type="text"
-            aria-label="Enter a new todo item"
-            placeholder="E.g. Build a web app"
-            class="js-todo-input"
-          />
-        </form>
       </div>
     </main>
   </body>
