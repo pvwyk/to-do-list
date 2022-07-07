@@ -2,72 +2,72 @@
 <html>
   <head>
     <link rel="stylesheet" href="index.css" />
-    <link href="https://css.gg/css" rel="stylesheet" />
     <meta name="viewport" content="width = device-width" />
   </head>
+
   <body>
-    <main>
-      <div class="container">
-        <!-- <p id="date"></p> -->
-        <p id="date1"></p>
-        <p id="date2"></p>
-        <p id="date3"></p>
-        <p id="item-list"></p>
-        <!-- <div class="big-box">
-          <button class="gg-add"></button>
-        </div> -->
-        <!-- <span id="date2"></span> -->
+    <div class="box-it">
+      <main>
+        <div class="container">
+          <div class="head1"><p id="date1"></p></div>
+          <div class="head2"><p id="date2"></p></div>
+          <div class="head3"><p id="date3"></p></div>
+          <div class="head4"><p id="item-list"></p></div>
 
-        <button id="myBtn" class="gg-add"></button>
-
-        <!-- <button id="update-to-do" class="gg-add"></button> -->
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <!-- <p>Some text in the Modal..</p> -->
-            <form class="todo-form js-form">
-              <input
-                autofocus
-                type="text"
-                aria-label="Enter a new todo item"
-                placeholder="Weet jou ma jy is hier?"
-                class="js-todo-input"
-              />
-            </form>
+          <div class="big-red">
+            <button id="myBtn" class="plus radius"></button>
           </div>
-        </div>
-        <!-- modal 2 for edit popup -->
-        <div id="myModal2" class="modal">
-          <!-- Modal content 2-->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <!-- <p>Some text in the Modal..</p> -->
-            <form class="update-form">
-              <input
-                autofocus
-                type="text"
-                aria-label="Enter a new todo item"
-                placeholder=""
-                class="js-todo-input2"
-              />
-            </form>
-          </div>
-        </div>
 
-        <ul class="todo-list js-todo-list"></ul>
-        <!-- add the empty state here -->
-        <!-- <div class="empty-state">
+          <hr class="line-1" />
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <!-- <p>Some text in the Modal..</p> -->
+              <form class="todo-form js-form">
+                <input
+                  autofocus
+                  type="text"
+                  aria-label="Enter a new todo item"
+                  placeholder="Weet jou ma jy is hier?"
+                  class="js-todo-input"
+                />
+              </form>
+            </div>
+          </div>
+
+          <!-- modal 2 for edit popup -->
+          <div id="myModal2" class="modal">
+            <!-- Modal content 2-->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <!-- <p>Some text in the Modal..</p> -->
+              <form class="update-form">
+                <input
+                  autofocus
+                  type="text"
+                  aria-label="Enter a new todo item"
+                  placeholder=""
+                  class="js-todo-input2"
+                />
+              </form>
+            </div>
+          </div>
+
+          <ul class="todo-list js-todo-list"></ul>
+          <!-- add the empty state here -->
+          <!-- <div class="empty-state">
           <h2 class="empty-state__title">Add your first todo</h2>
           <p class="empty-state__description">
             What do you want to get done today?
           </p>
         </div> -->
-        <!-- end -->
-      </div>
-    </main>
+          <!-- end -->
+        </div>
+      </main>
+    </div>
   </body>
   <svg>
     <defs>

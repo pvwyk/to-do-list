@@ -22,7 +22,7 @@ function renderTodo(todo) {
     <span class="span2">${todo.text}</span>
     <button class="delete-todo js-delete-todo">
     <svg><use href="#delete-icon"></use></svg>
-    </button>
+        
   `;
 
   if (item) {
