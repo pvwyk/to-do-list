@@ -11,16 +11,24 @@
   .box-it{
     margin: auto;
     position: relative;
-    max-width: 500px;
-    border: 1px solid rgb(0, 0, 0);
+    max-width: 600px;
+    border: 1px solid rgb(179, 179, 179);
     padding: 0px;
     background-color: #ffffff ;
     border-radius: 4px ;
     -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+          overflow: hidden;
+          
+    
+    /* background-color: rgb(236, 236, 236); */
   }
-
+   /* make scrollbar transparent */
+  /* ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  } */
   /* body {
    font-family:
    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
@@ -41,7 +49,7 @@
 
   position: absolute;
   top: 50px;
-  right: 270px;
+  right: 390px;
   width: 170px;
   height: 55px;
   
@@ -62,7 +70,7 @@
 
      position: absolute;
      top: 50px;
-     right: 150px;
+     right: 260px;
      width: 170px;
      height: 55px;
        }
@@ -74,31 +82,31 @@
        line-height: 1.4;
        text-align: center;
        margin-bottom: 20px;
-       font-size: 30px;
+       font-size: 25px;
        color: #7f7fdd;
        opacity: 0.8;
 
        position: absolute;
-     top: 100px;
-     right: 325px;
+     top: 110px;
+     right: 450px;
      width: 170px;
      height: 55px;
          } 
          
-         .head4{
-          font-family:
-         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-          Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-         line-height: 1.4;
-         text-align: center;
-         margin-bottom: 20px;
-         font-size: 20px;
-         color: #7f7fdd;
-         opacity: 0.8;
+          .head4{
+            font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+            Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+          line-height: 1.4;
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 23px;
+          color: #7f7fdd;
+          opacity: 0.8;
 
-         position: absolute;
+          position: absolute;
      top: 80px;
-     right: 2px;
+     right: -5px;
      width: 170px;
      height: 55px;
            }      
@@ -112,7 +120,7 @@
            
   .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding-left: 0px;
     padding-right: 0px;
@@ -131,31 +139,41 @@
   }
   
   .todo-list {
+    overflow: scroll;
+    overscroll-behavior: contain;
     list-style: none;
     margin-bottom: 20px;
     position: absolute;
-     top: 200px;
-     right: 190px;
+     top: 220px;
+     right: 0px;
+     left: 0px;
+     
      
   }
   
   .todo-item {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
+    border-bottom:1px solid rgb(179, 179, 179);
   }
   
   .todo-item span {
-    flex-grow: 1;
+    flex-grow: 3;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 22px;
+    font-size: 20px;
+    color: rgb(74, 74, 74);
   }
   
   .done span {
     text-decoration: line-through;
+    color: #888;
   }
   
   input[type="checkbox"] {
@@ -163,9 +181,9 @@
   }
   
   .tick {
-    width: 30px;
-    height: 30px;
-    border: 3px solid #333;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgb(127, 127, 127);
     border-radius: 10%;
     display: inline-flex;
     justify-content: center;
@@ -175,19 +193,20 @@
   }
   
   .tick::before {
+    font-weight: bold;
     content: '✓';
-    font-size: 18px;
+    font-size: 9px;
     color: #ffffff;
     display: none;
     
-    width: 40px;
-    height: 30px;
-    border: 3px solid red;
+    /* width: 20px;
+    height: 20px; */
+    border: 7px solid red;
     border-radius: 10%;
     /* display: inline-flex; */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    /* justify-content: center;
+    align-items: top;
+    cursor: pointer; */
     background-color: red;
   }
   
@@ -239,7 +258,7 @@
       linear-gradient(rgb(252,103,108) 0 0) bottom right;
     background-size: calc(50% - 1px) calc(50% - 1px); /*thickness = 2px (2*1px) */
     background-repeat:no-repeat;
-    border:15px solid rgb(252,103,108);
+    border:20px solid rgb(252,103,108);
     box-sizing: border-box;
     background-color: #fefefe;
         
@@ -308,7 +327,7 @@
     margin-left: auto;
     margin-top: 143px;
     margin-bottom:90px;
-    background-color:rgba(85, 85, 85, 0.495);
+    background-color:rgb(179, 179, 179);
   
    
 }
