@@ -20,8 +20,9 @@ function renderTodo(todo) {
     <input id="${todo.id}" type="checkbox"/>
     <label for="${todo.id}" class="tick js-tick"></label>
     <span class="span2">${todo.text}</span>
-    <button class="delete-todo js-delete-todo"><label for="end-time">
-    <svg><use href="#delete-icon"></use></svg>
+    <input type="time" value="00:00"/>
+    <button class="close-icon js-delete-todo">
+   
         
   `;
 
@@ -104,6 +105,7 @@ function deleteTodo(key) {
   todo.deleted = true;
   todoItems = todoItems.filter((item) => item.id !== Number(key));
   renderTodo(todo);
+  taskAmount();
 }
 
 const form = document.querySelector(".js-form");
@@ -206,7 +208,6 @@ const weekday = [
 
 const d = new Date();
 let day = weekday[d.getDay()];
-//document.getElementById("date").innerHTML = day;
 
 //th, nd and so on
 const nth = function (d) {
@@ -245,8 +246,10 @@ const month = [
   "December",
 ][fortnightAway.getMonth()];
 
-document.getElementById("date1").innerHTML = `${day},`;
-document.getElementById("date2").innerHTML = `${date}<sup>${nth(date)}</sup> `;
+document.getElementById("date1").innerHTML = `<b>${day}</b>, ${date}${nth(
+  date
+)}`;
+// document.getElementById("date2").innerHTML = `${date}${nth(date)} `;
 document.getElementById("date3").innerHTML = `${month}`;
 
 // test
@@ -294,21 +297,4 @@ window.onclick = function (event) {
   if (event.target == modal2) {
     modal2.style.display = "none";
   }
-};
-
-//time stuff
-var times = {},
-  re = /^\d+(?=:)/;
-
-for (var i = 13, n = 1; i < 24; i++, n++) {
-  times[i] = n < 10 ? "0" + n : n;
-}
-
-document.getElementById("end-time").onchange = function () {
-  var time = this,
-    value = time.value,
-    match = value.match(re)[0];
-  this.nextElementSibling.innerHTML =
-    (match && match >= 13 ? value.replace(re, times[match]) : value) +
-    (time.valueAsDate.getTime() < 43200000 ? " AM" : " PM");
 };
