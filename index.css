@@ -1,55 +1,39 @@
-/* html {
-    box-sizing: border-box;
-  } */
-  
-  /* *, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  } */
-  
-  .box-it{
-    margin: auto;
-    position: relative;
-    max-width: 600px;
-    height: 800px;
-    border: 1px solid rgb(179, 179, 179);
-    padding: 0px;
-    background-color: #ffffff ;
-    border-radius: 4px ;
-    overflow: hidden;
-    /* -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          overflow: hidden; */
-          
-    
-    /* background-color: rgb(236, 236, 236); */
-  }
-   /* make scrollbar transparent */
-   ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-  } 
+
+  /* everything contained within this  */
+.box-it{
+  margin: auto;
+  position: relative;
+  max-width: 600px;
+  height: 800px;
+  border: 1px solid rgb(179, 179, 179);
+  padding: 0px;
+  background-color: #ffffff ;
+  border-radius: 4px ;
+  overflow: hidden;
+}
+
+
+/* make scrollbar transparent */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+} 
  
-  
-  .head1{
-   font-family: 'Roboto', sans-serif;
-   line-height: 1.4;
-   text-align: left;
-   margin-bottom: 2px;
-   font-size: 40px;
-   color:#6366f4;
+/* This contains the date elements */
+.head1{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  text-align: left;
+  margin-bottom: 2px;
+  font-size: 40px;
+  color:#6366f4;
 
   position: absolute;
   top: 50px;
   left: 45px;
   width: 500px;
   height: 55px;
-  
-   
-   
-     }
+}
        
  .head3{
   font-family: 'Roboto', sans-serif;
@@ -67,181 +51,151 @@
      height: 55px;
          } 
          
-          .head4{
-          font-family: 'Roboto', sans-serif;
-          line-height: 1.4;
-          text-align: center;
-          margin-bottom: 20px;
-          font-size: 23px;
-          color: #7f7fdd;
-          opacity: 0.8;
+.head4{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 23px;
+  color: #7f7fdd;
+  opacity: 0.8;
 
-          position: absolute;
-     top: 80px;
-     right: -5px;
-     width: 170px;
-     height: 55px;
-           }      
+  position: absolute;
+  top: 80px;
+  right: -5px;
+  width: 170px;
+  height: 55px;
+}      
 
+/* contains the big plus button */
 .big-red{
   position: absolute;
   top: 150px;
   right: 50px;
   
 }
+/* stylize big red plus button */
+.plus {
+  width:60px;
+  height:60px;
+  display:inline-block;
+  
+  background:
+    linear-gradient(rgb(252,103,108) 0 0) top left,
+    linear-gradient(rgb(252,103,108) 0 0) top right,
+    linear-gradient(rgb(252,103,108) 0 0) bottom left,
+    linear-gradient(rgb(252,103,108) 0 0) bottom right;
+  background-size: calc(50% - 1px) calc(50% - 1px); /*thickness = 2px (2*1px) */
+  background-repeat:no-repeat;
+  border:22px solid rgb(252,103,108);
+  box-sizing: border-box;
+  background-color: #fefefe;
+      
+}
+
+.radius {
+  border-radius:50%;
+}
            
+  /*contain and style list elements  */
+.todo-list {
+  overflow-y:scroll; 
+  height: 560px;
+  list-style: none;
+  position: absolute;
   
-  .todo-list {
-    overflow-y:scroll; 
-    height: 560px;
-    /* overscroll-behavior: contain; */
-    list-style: none;
-    position: absolute;
-    
-    padding-top: 5px;
-     top: 220px;
-     right: 0px;
-     left: auto ;
-     width: 100%;
-    
-     
-  }
+  padding-top: 5px;
+  top: 220px;
+  right: 0px;
+  left: auto ;
+  width: 100%;
   
-  .todo-item {
+    
+}
+  
+.todo-item {
 
-    margin-bottom: 20px;
-    padding-bottom: 9px;
-    padding-left:0px;
-    padding-right: 0px;
-    width: 100%;
-    display: flex;
-    
-    justify-content: space-between;
-    border-bottom:1px solid rgb(179, 179, 179);
-  }
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  padding-left:0px;
+  padding-right: 0px;
+  width: 100%;
+  display: flex;
   
-  .todo-item span {
-    flex-grow: 3;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    color: rgba(74, 74, 74, 0.777);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .done span {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  .tick {
-    margin-left: 20px;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgb(127, 127, 127);
-    border-radius: 10%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    
-  }
-  
-  .tick::before {
-    font-weight: bold;
-    content: '✓';
-    font-size: 18px;
-    color: #ffffff;
-    display: none;
-    
-    width: 25px;
-    height: 20px;
-    border: 7px solid red;
-    border-radius: 10%;
-    /* display: inline-flex; */
-    /* justify-content: center;
-    align-items: top;
-    cursor: pointer; */
-    background-color: red;
-  }
-  
+  justify-content: space-between;
+  border-bottom:1px solid rgb(179, 179, 179);
+}
 
-  .done .tick::before {
-    display: inline;
-    
-  }
-  
-  /* .delete-todo {
-    border: none;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    
-  }
-  
-  .delete-todo svg {
-    width: 30px;
-    height: 30px;
-    pointer-events: none;
-  }
-   */
-  form {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 3px solid #333;
-  }
+.todo-item span {
+  flex-grow: 3;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  color: rgba(74, 74, 74, 0.777);
+  font-family: 'Roboto', sans-serif;
+}
 
-  sup {
-    font-size: x-small
-  }
+.done span {
+  text-decoration: line-through;
+  color: #888;
+}
 
-  .plus {
-    width:60px;
-    height:60px;
-    display:inline-block;
-    
-    background:
-      linear-gradient(rgb(252,103,108) 0 0) top left,
-      linear-gradient(rgb(252,103,108) 0 0) top right,
-      linear-gradient(rgb(252,103,108) 0 0) bottom left,
-      linear-gradient(rgb(252,103,108) 0 0) bottom right;
-    background-size: calc(50% - 1px) calc(50% - 1px); /*thickness = 2px (2*1px) */
-    background-repeat:no-repeat;
-    border:22px solid rgb(252,103,108);
-    box-sizing: border-box;
-    background-color: #fefefe;
-        
-  }
-  
-  .radius {
-    border-radius:50%;
-  }
-  
-  /* body {
-   background:rgb(39, 105, 59);
-  } */
+/* check box on list element */
+input[type="checkbox"] {
+  display: none;
+}
 
-
-
- .big-box{
-  width: 2px;
+.tick {
+  margin-left: 20px;
+  width: 20px;
   height: 20px;
-  top: 4px;
-  left: 8px
- }
+  border: 3px solid rgb(127, 127, 127);
+  border-radius: 10%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+}
 
- .modal {
+.tick::before {
+  font-weight: bold;
+  content: '✓';
+  font-size: 18px;
+  color: #ffffff;
+  display: none;
+  
+  width: 25px;
+  height: 20px;
+  border: 7px solid red;
+  border-radius: 10%;
+  background-color: red;
+}
+
+
+.done .tick::before {
+  display: inline;
+  
+}
+
+/* tod list input form */
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 3px solid #333;
+}
+
+
+
+/* Modal styling and properties */
+.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -278,21 +232,19 @@
   cursor: pointer;
 }
 
+/* divider in line with plus button */
 .line-1{
-  /* position: absolute; */
-    width: 100%;
-    height: 2px;
-    border: 0 none;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 180px;
-    margin-bottom:90px;
-    background-color:rgb(179, 179, 179);
-    
-  
-   
+  width: 100%;
+  height: 2px;
+  border: 0 none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 180px;
+  margin-bottom:90px;
+  background-color:rgb(179, 179, 179);  
 }
 
+/* Time picker styling */
 input[type=time] {
   border: none;
   color: #2a2c2d;
@@ -324,10 +276,11 @@ input[type=time]::-webkit-datetime-edit-hour-field {
   padding: 2px 3px;
 }
 
-input[type="time"]::-webkit-calendar-picker-indicator {
+/* input[type="time"]::-webkit-calendar-picker-indicator {
   background: none;
-}
+} */
 
+/* Close button on list items */
 .close-icon{
   margin-right: 20px;
   display:block;
