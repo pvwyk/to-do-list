@@ -20,7 +20,7 @@ function renderTodo(todo) {
     <input id="${todo.id}" type="checkbox"/>
     <label for="${todo.id}" class="tick js-tick"></label>
     <span class="span2">${todo.text}</span>
-    <button class="delete-todo js-delete-todo">
+    <button class="delete-todo js-delete-todo"><label for="end-time">
     <svg><use href="#delete-icon"></use></svg>
         
   `;
@@ -294,4 +294,21 @@ window.onclick = function (event) {
   if (event.target == modal2) {
     modal2.style.display = "none";
   }
+};
+
+//time stuff
+var times = {},
+  re = /^\d+(?=:)/;
+
+for (var i = 13, n = 1; i < 24; i++, n++) {
+  times[i] = n < 10 ? "0" + n : n;
+}
+
+document.getElementById("end-time").onchange = function () {
+  var time = this,
+    value = time.value,
+    match = value.match(re)[0];
+  this.nextElementSibling.innerHTML =
+    (match && match >= 13 ? value.replace(re, times[match]) : value) +
+    (time.valueAsDate.getTime() < 43200000 ? " AM" : " PM");
 };
